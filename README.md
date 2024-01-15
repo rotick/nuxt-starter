@@ -1,9 +1,14 @@
 # Nuxt starter
 ```bash
 git clone --depth=1 https://github.com/rotick/nuxt-starter.git new-project
+
+cd new-project
+
+mv .env.example .env
 ```
 Replace all:
 - NuxtStarter -> { your site name }
+
 ## Development
 
 ```bash
