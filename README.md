@@ -4,6 +4,7 @@ git clone --depth=1 https://github.com/rotick/nuxt-starter.git new-project
 
 cd new-project
 
+rm -rf .git
 mv .env.example .env
 ```
 Replace all:
