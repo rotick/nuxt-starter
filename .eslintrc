@@ -7,7 +7,7 @@
   "parser":"vue-eslint-parser",
   "extends":[
     "plugin:vue/vue3-recommended",
-    "standard-with-typescript"
+    "love"
   ],
   "parserOptions":{
     "project":[
