@@ -5,8 +5,7 @@ export default oauthGoogleEventHandler({
         provider: 'google',
         id: user.sub,
         name: user.name,
-        avatar: user.picture,
-        url: ''
+        avatar: user.picture
       }
     })
 
