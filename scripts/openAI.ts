@@ -1,8 +1,9 @@
+import { ReadableStream } from 'node:stream/web'
 import { createParser } from 'eventsource-parser'
 import { ProxyAgent, fetch, Response } from 'undici'
-import { ReadableStream } from 'node:stream/web'
 import dotenv from 'dotenv'
 import type { ParsedEvent, ReconnectInterval } from 'eventsource-parser'
+
 interface ChatMessage {
   role: 'system' | 'user' | 'assistant'
   content: string
@@ -14,7 +15,7 @@ const apiKey = process.env.OPENAI_API_KEY as string
 const httpsProxy = process.env.HTTPS_PROXY
 const baseUrl = (process.env.OPENAI_API_BASE_URL || 'https://api.openai.com').trim().replace(/\/$/, '')
 
-export async function chatGPT (message: string) {
+export async function chatGPT(message: string) {
   const messages: ChatMessage[] = [
     {
       role: 'system',
@@ -34,7 +35,7 @@ export async function chatGPT (message: string) {
 export const generatePayload = (apiKey: string, messages: ChatMessage[]): RequestInit & { dispatcher?: any } => ({
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${apiKey}`
+    'Authorization': `Bearer ${apiKey}`
   },
   method: 'POST',
   body: JSON.stringify({
@@ -57,7 +58,7 @@ export const parseOpenAIStream = (rawResponse: Response) => {
   }
 
   const stream = new ReadableStream({
-    async start (controller) {
+    async start(controller) {
       const streamParser = (event: ParsedEvent | ReconnectInterval) => {
         if (event.type === 'event') {
           const data = event.data
@@ -70,7 +71,8 @@ export const parseOpenAIStream = (rawResponse: Response) => {
             const text = json.choices[0].delta?.content || ''
             const queue = encoder.encode(text)
             controller.enqueue(queue)
-          } catch (e) {
+          }
+          catch (e) {
             controller.error(e)
           }
         }

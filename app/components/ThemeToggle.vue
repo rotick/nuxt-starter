@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useColorMode } from '#imports'
+
 const colorMode = useColorMode()
-function toggleTheme () {
+function toggleTheme() {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 </script>

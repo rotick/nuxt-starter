@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
+
 defineProps({
   top: {
     type: Number,
@@ -19,10 +20,10 @@ const wrap = ref()
 onClickOutside(wrap, () => {
   show.value = false
 })
-function toggleShow () {
+function toggleShow() {
   show.value = !show.value
 }
-function closeDropDown () {
+function closeDropDown() {
   show.value = false
 }
 </script>

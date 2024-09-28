@@ -17,10 +17,10 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:modelValue'])
 const value = computed({
-  get () {
+  get() {
     return props.modelValue
   },
-  set (value) {
+  set(value) {
     emit('update:modelValue', Number(value))
   }
 })
@@ -49,7 +49,7 @@ onMounted(() => {
     :max="max"
     :style="{
       '--thumb-rotate': `${(value / 48) * 2160}deg`,
-      background: `linear-gradient(to right, #f43f5e ${progress}%, ${bgColor} ${progress}% 100%)`
+      'background': `linear-gradient(to right, #f43f5e ${progress}%, ${bgColor} ${progress}% 100%)`
     }"
   >
 </template>

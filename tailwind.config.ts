@@ -1,12 +1,17 @@
-const colors = require('tailwindcss/colors')
-const { addDynamicIconSelectors } = require('@iconify/tailwind')
+import defaultTheme from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
+import { addDynamicIconSelectors } from '@iconify/tailwind'
+
 export default {
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      sans: ['Inter var', 'Inter', ...defaultTheme.fontFamily.sans]
+    },
     extend: {
       colors: {
         primary: colors.sky,
-        gray: colors.slate
+        gray: colors.zinc
       }
     }
   },

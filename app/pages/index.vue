@@ -6,7 +6,10 @@ useHead({
 </script>
 
 <template>
-  <div class="color-title">NuxtStarter</div>
+  <header class="flex items-center justify-between px-6 h-12">
+    <Logo />
+    <ToolBar />
+  </header>
 </template>
 
 <style>

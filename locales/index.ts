@@ -1,4 +1,4 @@
-const locale = [
+const locales = [
   {
     code: 'en',
     iso: 'en',
@@ -136,4 +136,4 @@ const locale = [
   { code: 'ro', iso: 'ro', name: 'Română', file: 'ro.json' },
   { code: 'hu', iso: 'hu', name: 'Magyar', file: 'hu.json' }
 ]
-export default locale
+export default locales

@@ -1,6 +1,7 @@
 <template>
   <NuxtPage />
 </template>
+
 <script setup lang="ts">
 const { t } = useI18n()
 const route = useRoute()
@@ -10,11 +11,22 @@ const i18nHead = useLocaleHead({
 const url = useRequestURL()
 // const origin = 'https://' + url.host
 const origin = url.origin
+const { fetch: refreshSession } = useUserSession()
+onMounted(() => {
+  const channel = new BroadcastChannel('authChannel')
+  channel.addEventListener('message', function (event) {
+    if (event.data === 'auth-ready') {
+      refreshSession().then(() => {
+        channel.postMessage('session-refreshed')
+      })
+    }
+  })
+})
 useHead({
   htmlAttrs: {
     lang: i18nHead.value.htmlAttrs?.lang
   },
-  titleTemplate: titleChunk => {
+  titleTemplate: (titleChunk) => {
     return (route.name as string).startsWith('index') && !route.query.q ? titleChunk || t('seoTitle') : `${titleChunk} - ${t('siteName')}`
   },
   link: [

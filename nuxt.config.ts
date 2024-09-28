@@ -1,16 +1,37 @@
-import locale from './locale'
+import type { LocaleObject } from '@nuxtjs/i18n'
+import locales from './locales'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-09-28',
+  future: { compatibilityVersion: 4 },
   devtools: { enabled: false },
+
   devServer: {
     port: 5000
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/eslint-module', '@nuxtjs/i18n', 'nuxt-gtag', '@nuxtjs/google-fonts', '@nuxtjs/seo'],
+
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
+    '@nuxt/eslint',
+    '@nuxtjs/i18n',
+    'nuxt-gtag',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/seo',
+    'nuxt-auth-utils',
+    '@nuxthub/core'
+  ],
+
+  hub: {
+    database: true
+  },
+
   site: {
     url: '',
     name: 'NuxtStarter',
     description: ''
   },
+
   schemaOrg: {
     identity: {
       type: 'Organization',
@@ -24,22 +45,32 @@ export default defineNuxtConfig({
       }
     }
   },
+
   colorMode: {
     classSuffix: '',
     preference: 'dark',
     fallback: 'dark'
   },
+
   googleFonts: {
     families: {
-      Roboto: [300, 500, 700]
+      Inter: [300, 500, 700]
     }
   },
+
   gtag: {
     id: ''
   },
+
   eslint: {
-    lintOnStart: false
+    config: {
+      stylistic: {
+        quotes: 'single',
+        commaDangle: 'never'
+      }
+    }
   },
+
   i18n: {
     baseUrl: '',
     strategy: 'prefix_except_default',
@@ -49,12 +80,21 @@ export default defineNuxtConfig({
       cookieKey: 'lang',
       cookieCrossOrigin: true
     },
-    langDir: './lang',
-    locales: locale
+    lazy: true,
+    langDir: '/locales',
+    locales: locales as LocaleObject[]
   },
+
+  runtimeConfig: {
+    public: {
+      googleAuth: Boolean(process.env.GOOGLE_AUTH || (process.env.NUXT_OAUTH_GOOGLE_CLIENT_ID && process.env.NUXT_OAUTH_GOOGLE_CLIENT_SECRET))
+    }
+  },
+
   nitro: {
     // preset: 'cloudflare_pages'
   },
+
   routeRules: {
     // '/': { prerender: true }
   }

@@ -48,9 +48,12 @@
   .tooltip{
     @apply relative after:absolute after:top-0 after:left-[50%] after:w-[auto] after:translate-x-[-50%] after:translate-y-[-105%] after:whitespace-nowrap after:z-10 after:bg-gray-900 after:shadow-sm after:text-white after:py-1 after:px-2 after:text-sm after:rounded-lg after:content-[attr(data-tip)] after:hidden hover:after:block
   }
-}
-html{
-  font-family: Roboto, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", system-ui;
+  .tooltip-down, .tooltip.tooltip-down{@apply after:top-auto after:bottom-0 after:translate-y-[110%];}
+  .tooltip-left, .tooltip.tooltip-left{@apply after:left-0 after:translate-x-0}
+  .tooltip-right, .tooltip.tooltip-right{@apply after:left-auto after:right-0 after:translate-x-0}
+  .center{
+    @apply flex justify-center items-center
+  }
 }
 .dark {
   color-scheme: dark;

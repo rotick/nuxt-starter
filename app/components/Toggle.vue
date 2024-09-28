@@ -9,10 +9,10 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:modelValue'])
 const value = computed({
-  get () {
+  get() {
     return props.modelValue
   },
-  set (value) {
+  set(value) {
     emit('update:modelValue', value)
   }
 })
@@ -22,7 +22,7 @@ const value = computed({
   <label class="relative inline-flex items-center cursor-default">
     <input v-model="value" type="checkbox" class="sr-only peer">
     <span
-      class="w-9 h-5 bg-zinc-200 peer-focus:outline-none rounded-full peer dark:bg-zinc-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white dark:after:bg-zinc-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-500"
+      class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white dark:after:bg-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-500"
     />
   </label>
 </template>
