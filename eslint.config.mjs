@@ -16,6 +16,7 @@ export default withNuxt(
       'vue/no-deprecated-dollar-listeners-api': 0,
       'vue/max-attributes-per-line': 'off',
       'vue/singleline-html-element-content-newline': 0,
+      'vue/no-multiple-template-root': 0,
       '@typescript-eslint/return-await': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-var-requires': 'off',

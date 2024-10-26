@@ -1,139 +1,139 @@
 const locales = [
   {
     code: 'en',
-    iso: 'en',
+    language: 'en',
     name: 'English',
     file: 'en.json'
   },
   {
     code: 'zh-hans',
-    iso: 'zh',
+    language: 'zh',
     name: '简体中文',
     file: 'zh-hans.json'
   },
   {
     code: 'es',
-    iso: 'es',
+    language: 'es',
     name: 'Español',
     file: 'es.json'
   },
   {
     code: 'zh-hant',
-    iso: 'zh-TW',
+    language: 'zh-TW',
     name: '正體中文',
     file: 'zh-hant.json'
   },
   {
     code: 'de',
-    iso: 'de',
+    language: 'de',
     name: 'Deutsch',
     file: 'de.json'
   },
   {
     code: 'ja',
-    iso: 'ja',
+    language: 'ja',
     name: '日本語',
     file: 'ja.json'
   },
   {
     code: 'fr',
-    iso: 'fr',
+    language: 'fr',
     name: 'Français',
     file: 'fr.json'
   },
   {
     code: 'ko',
-    iso: 'ko',
+    language: 'ko',
     name: '한국어',
     file: 'ko.json'
   },
   {
     code: 'pt',
-    iso: 'pt',
+    language: 'pt',
     name: 'Português',
     file: 'pt.json'
   },
   {
     code: 'ru',
-    iso: 'pt',
+    language: 'pt',
     name: 'Русский',
     file: 'ru.json'
   },
   {
     code: 'tr',
-    iso: 'tr',
+    language: 'tr',
     name: 'Türkçe',
     file: 'tr.json'
   },
   {
     code: 'ar',
-    iso: 'ar',
+    language: 'ar',
     name: 'العربية',
     dir: 'ltr',
     file: 'ar.json'
   },
   {
     code: 'it',
-    iso: 'it',
+    language: 'it',
     name: 'Italiano',
     file: 'it.json'
   },
   {
     code: 'hi',
-    iso: 'hi',
+    language: 'hi',
     name: 'हिन्दी',
     file: 'hi.json'
   },
   {
     code: 'pl',
-    iso: 'pl',
+    language: 'pl',
     name: 'Polski',
     file: 'pl.json'
   },
   {
     code: 'bn',
-    iso: 'bn',
+    language: 'bn',
     name: 'বাংলা',
     file: 'bn.json'
   },
-  { code: 'nl', iso: 'nl', name: 'Nederlands', file: 'nl.json' },
+  { code: 'nl', language: 'nl', name: 'Nederlands', file: 'nl.json' },
   {
     code: 'uk',
-    iso: 'uk',
+    language: 'uk',
     name: 'Українська',
     file: 'uk.json'
   },
   {
     code: 'id',
-    iso: 'id',
+    language: 'id',
     name: 'Bahasa Indonesia',
     file: 'id.json'
   },
   {
     code: 'ms',
-    iso: 'ms',
+    language: 'ms',
     name: 'Bahasa Malaysia',
     file: 'ms.json'
   },
   {
     code: 'vi',
-    iso: 'vi',
+    language: 'vi',
     name: 'Tiếng Việt',
     file: 'vi.json'
   },
   {
     code: 'th',
-    iso: 'th',
+    language: 'th',
     name: 'ไทย',
     file: 'th.json'
   },
-  { code: 'sv', iso: 'sv', name: 'Svenska', file: 'sv.json' },
-  { code: 'el', iso: 'el', name: 'Ελληνικά', file: 'el.json' },
-  { code: 'he', iso: 'he', name: 'עברית‎', file: 'he.json', dir: 'ltr' },
-  { code: 'fi', iso: 'fi', name: 'Suomi', file: 'fi.json' },
-  { code: 'no', iso: 'no', name: 'Norsk', file: 'no.json' },
-  { code: 'da', iso: 'da', name: 'Dansk', file: 'da.json' },
-  { code: 'ro', iso: 'ro', name: 'Română', file: 'ro.json' },
-  { code: 'hu', iso: 'hu', name: 'Magyar', file: 'hu.json' }
+  { code: 'sv', language: 'sv', name: 'Svenska', file: 'sv.json' },
+  { code: 'el', language: 'el', name: 'Ελληνικά', file: 'el.json' },
+  { code: 'he', language: 'he', name: 'עברית‎', file: 'he.json', dir: 'ltr' },
+  { code: 'fi', language: 'fi', name: 'Suomi', file: 'fi.json' },
+  { code: 'no', language: 'no', name: 'Norsk', file: 'no.json' },
+  { code: 'da', language: 'da', name: 'Dansk', file: 'da.json' },
+  { code: 'ro', language: 'ro', name: 'Română', file: 'ro.json' },
+  { code: 'hu', language: 'hu', name: 'Magyar', file: 'hu.json' }
 ]
 export default locales
